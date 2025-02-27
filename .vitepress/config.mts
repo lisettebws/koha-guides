@@ -7,7 +7,7 @@ export default defineConfig({
   description: "A chrono-synclastic infundibulum",
   lastUpdated: true,
   cleanUrls: true,
-  base: '/quahog/',
+  base: 'koha-guides',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
