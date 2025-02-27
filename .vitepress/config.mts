@@ -3,11 +3,11 @@ import markdownItMermaid from 'markdown-it-mermaid'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Quahog",
+  title: "Koha Guides",
   description: "A chrono-synclastic infundibulum",
   lastUpdated: true,
   cleanUrls: true,
-  base: 'koha-guides',
+  base: '/koha-guides',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
