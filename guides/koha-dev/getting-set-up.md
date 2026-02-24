@@ -84,19 +84,34 @@ Use the `echo` command to write some environment variables to your `~/.bashrc` f
 The single `>` operator completely overwrites the file if it exists, also known as [clobbering](https://en.wikipedia.org/wiki/Clobbering) which could be disasterous.
 :::
 
-```bash
+::: code-group
+```bash [Windows & Linux]
 echo 'export PROJECTS_DIR=$PROJECTS_DIR' >> ~/.bashrc
 echo 'export SYNC_REPO=$PROJECTS_DIR/koha' >> ~/.bashrc
 echo 'export KTD_HOME=$PROJECTS_DIR/koha-testing-docker' >> ~/.bashrc
 echo 'export PATH=$PATH:$KTD_HOME/bin' >> ~/.bashrc
 echo 'export LOCAL_USER_ID=$(id -u)' >> ~/.bashrc
 ```
+```zsh [MacOS]
+echo "export PROJECTS_DIR=$PROJECTS_DIR" >> ~/.zshenv
+echo 'export SYNC_REPO=$PROJECTS_DIR/koha' >> ~/.zshenv
+echo 'export KTD_HOME=$PROJECTS_DIR/koha-testing-docker' >> ~/.zshenv
+echo 'export PATH=$PATH:$KTD_HOME/bin' >> ~/.zshenv
+echo 'export LOCAL_USER_ID=$(id -u)' >> ~/.zshenv
+```
+:::
 
 ::: tip :wrench: TIP
 Use `cat` to print the contents of a file to the terminal
-```bash
+
+::: code-group
+```bash [Windows & Linux]
 cat ~/.bashrc
 ```
+```zsh [MacOS]
+cat ~/.zshenv
+```
+:::
 :::
 
 At the bottom of the output you should see those commands.
@@ -112,9 +127,15 @@ export LOCAL_USER_ID=$(id -u)
 These are all the paths that `koha-testing-docker` needs to use. 
 
 The `source` command makes these environment variables accessible in the current terminal. Alternatively you could close the current terminal and open a new onefor the changes to take effect.
-```bash 
+
+::: code-group
+```bash [Windows & Linux]
 source ~/.bashrc
 ```
+```zsh [MacOS]
+source ~/.zshenv
+```
+:::
 
 Using `echo` and `>>` is a convenient way to append lines to your `~/.bashrc` file, but it is also good to learn how to edit the `~/.bashrc` directly using the `nano` terminal based text editor.
 
